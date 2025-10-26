@@ -1,6 +1,5 @@
 optinal_suites =["H","C","D","S"]
-def create_card(rank:str, suite:str) -> dict:
-    ranks={"2":2,
+ranks={"2":2,
            "3":3,
            "4":4,
            "5":5,
@@ -13,6 +12,8 @@ def create_card(rank:str, suite:str) -> dict:
            "Q":12,
            "K":13,
            "A":14}
+def create_card(rank:str, suite:str) -> dict:
+    
     if(rank not in ranks and suite not in optinal_suites):
         return None
     
@@ -30,3 +31,15 @@ def compare_cards(p1_card: dict, p2_card: dict) -> str:
         return "p2"
     
     return "WAR"
+
+def create_deck() -> list[dict]:
+    result=[]
+    for suite in optinal_suites:
+        for rank in (ranks):
+            tmp_card =create_card(rank,suite)
+            if (tmp_card != None):
+                result.append(tmp_card)
+    return result      
+        
+print(len(create_deck()))
+
