@@ -21,3 +21,12 @@ def create_card(rank:str, suite:str) -> dict:
         "suite":suite,
         "value":ranks[rank]
     }
+def compare_cards(p1_card: dict, p2_card: dict) -> str:
+    p1_value=p1_card["value"]
+    p2_value=p2_card["value"]
+    if(p1_value>p2_value):
+        return "p1"
+    elif(p1_value<p2_value):
+        return "p2"
+    
+    return "WAR"
